@@ -1,9 +1,11 @@
+import Page from "./components/Page";
+import FieldSearch from "./components/FieldSearch";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Olá mundo</h1>
-    </div>
+    <Page>
+      <FieldSearch/>
+    </Page>
   );
 }
 

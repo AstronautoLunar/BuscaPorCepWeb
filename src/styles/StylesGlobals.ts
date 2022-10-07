@@ -1,4 +1,8 @@
+// Core
 import { createGlobalStyle } from "styled-components";
+
+// Styles
+import colors from "./colors";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -8,6 +12,17 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
 
     font-family: Arial, Helvetica, sans-serif;
+  }
+
+  h1, 
+  h2, 
+  h3, 
+  h4, 
+  h5, 
+  p, 
+  span
+  {
+    color: ${colors.secondary};
   }
 `;
 
