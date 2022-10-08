@@ -1,5 +1,15 @@
-import { createContext } from "react";
+// Core
+import { 
+  createContext, 
+  Dispatch, 
+  SetStateAction 
+} from "react";
 
-const DataContext = createContext({});
+type DataContextProps = {
+  valueCep: string;
+  setValueCep: Dispatch<SetStateAction<string>>;
+}
+
+const DataContext = createContext({} as DataContextProps);
 
 export default DataContext;

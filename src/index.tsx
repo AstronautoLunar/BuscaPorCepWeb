@@ -10,10 +10,8 @@ const root = ReactDOM.createRoot(
 root.render(
   <>
     <GlobalStyle/>
-    <React.StrictMode>
-      <DataProvider>
-        <App />
-      </DataProvider>
-    </React.StrictMode>
+    <DataProvider>
+      <App />
+    </DataProvider>
   </>
 );

@@ -1,5 +1,5 @@
 type Component = {
-  children: (JSX.Element | string)[] | (JSX.Element | string);
+  children: any
 }
 
 export default Component;
