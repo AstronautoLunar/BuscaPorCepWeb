@@ -6,7 +6,7 @@ type ContainerProps = {
 }
 
 export const Container = styled.div<ContainerProps>`
-  padding: 8px 16px;
+  padding: 8px;
   
   display: flex;
   justify-content: center;
