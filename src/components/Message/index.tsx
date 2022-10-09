@@ -2,15 +2,15 @@
 import { memo } from "react";
 
 // Components
-import { Text, TextProps } from "./styles";
+import { Text } from "./styles";
 
-type MessageProps = TextProps & {
+type MessageProps = {
   children: string;
 }
 
-function Message({ children, isError }: MessageProps) {
+function Message({ children }: MessageProps) {
   return (
-    <Text isError={isError}>
+    <Text>
       { children }
     </Text>
   )
