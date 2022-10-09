@@ -14,13 +14,17 @@ type FieldSearchProps = {
   value: string;
   onChangeText: (value: string) => void;
   loading?: boolean;
+  onFocus?: () => void;
+  onBlur?: () => void;
 }
 
 export default function FieldSearch({ 
   type, 
   value, 
   onChangeText,
-  loading
+  loading,
+  onFocus,
+  onBlur
 }: FieldSearchProps) {
   const [color, setColor] = useState(colors.secondary);
   const inputRef = useRef(null as (HTMLInputElement | null));
@@ -63,9 +67,20 @@ export default function FieldSearch({
         }}
         colorText={color}
         ref={inputRef}
-        onFocus={() => setColor(colors.emphasis)}
-        onBlur={() => setColor(colors.secondary)}
-
+        onFocus={() => {
+          setColor(colors.emphasis)
+          
+          if (!!onFocus) {
+            onFocus();
+          } 
+        }}
+        onBlur={() => {
+          setColor(colors.secondary)
+          
+          if (!!onBlur) {
+            onBlur();
+          }
+        }}
       />
     </Container>
   );

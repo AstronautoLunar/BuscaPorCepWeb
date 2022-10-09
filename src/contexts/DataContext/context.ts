@@ -13,6 +13,8 @@ type DataContextProps = {
   setValueCep: Dispatch<SetStateAction<string>>;
   data: Data;
   setData: Dispatch<SetStateAction<Data>>;
+  hiddenCard: boolean;
+  setHiddenCard: Dispatch<SetStateAction<boolean>>
 }
 
 const DataContext = createContext({} as DataContextProps);
