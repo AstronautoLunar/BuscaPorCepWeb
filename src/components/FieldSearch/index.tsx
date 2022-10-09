@@ -42,18 +42,21 @@ export default function FieldSearch({
       color={color}
       onClick={() => inputRef.current?.focus()}
     >
-      {
-        loading
-        ?
-          <Spinner/>
-        :
-        <Search
-          color={colors.emphasis}
-          size={32}
-          title="Icon search"
-        />
-      }
+      <label htmlFor="input-search">
+        {
+          loading
+          ?
+            <Spinner/>
+          :
+          <Search
+            color={colors.emphasis}
+            size={32}
+            title="Icon search"
+          />
+        }
+      </label>
       <Input
+        id="input-search"
         value={value}
         onChange={event => {
           onChangeText(applyConversionPerType(event.target.value));

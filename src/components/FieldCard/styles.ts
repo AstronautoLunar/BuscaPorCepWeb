@@ -38,6 +38,8 @@ export const Label = styled.span<Align>`
 
   color: ${colors.emphasis};
 
+  margin-bottom: 4px;
+
   text-align: ${props => props.align ?? "left"};
 
   ${MediaQuerie}
