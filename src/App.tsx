@@ -19,12 +19,13 @@ function App() {
   const [isLoadingPage, setIsLoadingPage] = useState(true);
   const [loading, setLoading] = useState(false);
   const [messageError, setMessageError] = useState("");
-  const [hiddenCard, setHiddenCard] = useState(true);
   const { 
     valueCep, 
     setValueCep, 
     data, 
-    setData 
+    setData,
+    hiddenCard, 
+    setHiddenCard,
   } = useData();
 
   const fetchData = useCallback(async () => {
@@ -82,6 +83,8 @@ function App() {
         value={valueCep}
         onChangeText={setValueCep}
         loading={loading}
+        onFocus={() => setHiddenCard(true)}
+        onBlur={() => setHiddenCard(false)}
       />
       <br/>
       <br/>
