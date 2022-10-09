@@ -23,7 +23,7 @@ export const Container = styled.div<ContainerProps>`
 
   @media (max-width: 404px) {
     & {
-      width: calc(100% - 56px);
+      width: calc(100% - 64px);
     }
   }
 `;

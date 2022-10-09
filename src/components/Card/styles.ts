@@ -13,6 +13,12 @@ export const Container = styled.div`
 
   border-radius: 24px;
   border: 2px solid ${colors.secondary};
+
+  @media (max-width: 404px) {
+    & {
+      width: calc(100% - 64px);
+    }
+  }
 `;
 
 // export const 

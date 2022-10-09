@@ -7,6 +7,7 @@ import FieldSearch from "./components/FieldSearch";
 import Title from "./components/Title";
 import Card from "./components/Card";
 import Message from "./components/Message";
+import Logo from "./components/Logo";
 
 // Context
 import { useData } from "./contexts/DataContext";
@@ -15,6 +16,7 @@ import { useData } from "./contexts/DataContext";
 import { cepService } from "./services/cep.service";
 
 function App() {
+  const [isLoadingPage, setIsLoadingPage] = useState(true);
   const [loading, setLoading] = useState(false);
   const [messageError, setMessageError] = useState("");
   const [hiddenCard, setHiddenCard] = useState(true);
@@ -53,8 +55,19 @@ function App() {
     if (valueCep.replace("-", "").length === 8) {
       fetchData();
     }
-
   }, [valueCep]);
+
+  useEffect(() => {
+    setIsLoadingPage(false);
+  }, []);
+
+  if (isLoadingPage) {
+    return (
+      <Page>
+        <Logo/>
+      </Page>
+    )
+  }
 
   return (
     <Page>

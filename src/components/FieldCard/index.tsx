@@ -6,10 +6,10 @@ import {
   Area, 
   Label, 
   Value,
-  AreaProps
+  Align
 } from "./styles";
 
-type FieldCardProps = AreaProps & {
+type FieldCardProps = Align & {
   children: string;
   label: string;
 }
@@ -21,8 +21,8 @@ function FieldCard({
 }: FieldCardProps) {
   return (
     <Area align={align}>
-      <Label>{ label }</Label>
-      <Value>{ children }</Value>
+      <Label align={align}>{ label }</Label>
+      <Value align={align}>{ children || "Não foi encontrado" }</Value>
     </Area>
   )
 }

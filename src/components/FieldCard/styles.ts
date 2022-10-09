@@ -4,14 +4,22 @@ import styled from "styled-components";
 // Styles
 import colors from "../../styles/colors";
 
-export type AreaProps = {
+export type Align = {
   align?: "left" | "right";
 }
 
-export const Area = styled.div<AreaProps>`
+const MediaQuerie = `
+  @media (max-width: 404px) {
+    & {
+      font-size: 12px;
+    }
+  }
+`;
+
+export const Area = styled.div<Align>`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: ${props => {
     switch (props.align) {
       default:
@@ -24,15 +32,23 @@ export const Area = styled.div<AreaProps>`
   }};
 `;
 
-export const Label = styled.span`
+export const Label = styled.span<Align>`
   font-size: 16px;
   font-weight: bold;
 
   color: ${colors.emphasis};
+
+  text-align: ${props => props.align ?? "left"};
+
+  ${MediaQuerie}
 `;
 
-export const Value = styled.span`
+export const Value = styled.span<Align>`
   font-size: 16px;
 
   color: ${colors.secondary + 90};
+
+  text-align: ${props => props.align ?? "left"};
+
+  ${MediaQuerie}
 `;
