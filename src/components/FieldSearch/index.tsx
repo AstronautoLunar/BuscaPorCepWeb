@@ -62,6 +62,7 @@ export default function FieldSearch({
         ref={inputRef}
         onFocus={() => setColor(colors.emphasis)}
         onBlur={() => setColor(colors.secondary)}
+
       />
     </Container>
   );

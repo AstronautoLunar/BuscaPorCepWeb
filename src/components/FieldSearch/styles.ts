@@ -1,4 +1,7 @@
+// Core
 import styled from "styled-components";
+
+// Styles
 import colors from "../../styles/colors";
 
 type ContainerProps = {

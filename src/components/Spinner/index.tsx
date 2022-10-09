@@ -1,4 +1,5 @@
 // Core
+import { memo } from "react";
 import { SpinnerIos } from "@styled-icons/fluentui-system-filled/SpinnerIos";
 
 // Components
@@ -12,7 +13,7 @@ type SpinnerProps = {
   color?: string;
 }
 
-export default function Spinner({ size = 32, color = colors.emphasis }: SpinnerProps) {
+function Spinner({ size = 32, color = colors.emphasis }: SpinnerProps) {
   return (
     <Container>
       <SpinnerIos
@@ -22,3 +23,5 @@ export default function Spinner({ size = 32, color = colors.emphasis }: SpinnerP
     </Container>
   )
 }
+
+export default memo(Spinner);

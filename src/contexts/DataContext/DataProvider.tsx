@@ -1,6 +1,6 @@
 // Core
 import DataContext from "./context";
-import { useState, useCallback } from "react";
+import { useState } from "react";
 
 // Types
 import Component from "../../types/Component";

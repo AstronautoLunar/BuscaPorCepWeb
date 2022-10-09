@@ -1,10 +1,8 @@
-// Core
-import { useState } from "react"; 
-
 // Components
 import Page from "./components/Page";
 import FieldSearch from "./components/FieldSearch";
 import Title from "./components/Title";
+import Card from "./components/Card";
 
 // Context
 import { useData } from "./contexts/DataContext";
@@ -26,6 +24,9 @@ function App() {
         onChangeText={setValueCep}
         loading={false}
       />
+      <br/>
+      <br/>
+      <Card/>
     </Page>
   );
 }
