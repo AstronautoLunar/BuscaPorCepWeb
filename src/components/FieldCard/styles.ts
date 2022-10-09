@@ -25,7 +25,7 @@ export const Area = styled.div<AreaProps>`
 `;
 
 export const Label = styled.span`
-  font-size: 24px;
+  font-size: 16px;
   font-weight: bold;
 
   color: ${colors.emphasis};

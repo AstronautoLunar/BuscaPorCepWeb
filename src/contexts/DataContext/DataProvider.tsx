@@ -4,15 +4,19 @@ import { useState } from "react";
 
 // Types
 import Component from "../../types/Component";
+import Data from "../../types/Data";
 
 function DataProvider({ children }: Component) {
   const [ valueCep, setValueCep ] = useState("");
+  const [ data, setData ] = useState({} as Data);
 
   return (
     <DataContext.Provider 
       value={{ 
         valueCep,
-        setValueCep
+        setValueCep,
+        data, 
+        setData,
       }}
     >
       { children }

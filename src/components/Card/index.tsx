@@ -7,33 +7,33 @@ import FieldCard from "../FieldCard";
 // Styles
 import { Container } from "./styles";
 
-function Card() {
+type Items = {
+  label: string;
+  value: string;
+}
+
+type CardProps = {
+  items?: Items[];
+}
+
+function Card({ items }: CardProps) {
   return (
     <Container>
-      <FieldCard align="left" label="teste label">
-        Teste valor
-      </FieldCard>
-      <FieldCard align="right" label="teste label">
-        Teste valor
-      </FieldCard>
-      <FieldCard align="left" label="teste label">
-        Teste valor
-      </FieldCard>
-      <FieldCard align="right" label="teste label">
-        Teste valor
-      </FieldCard>
-      <FieldCard align="left" label="teste label">
-        Teste valor
-      </FieldCard>
-      <FieldCard align="right" label="teste label">
-        Teste valor
-      </FieldCard>
-      <FieldCard align="left" label="teste label">
-        Teste valor
-      </FieldCard>
-      <FieldCard align="right" label="teste label">
-        Teste valor
-      </FieldCard>
+      {
+        items?.map(({ label, value }, index) => {
+          const align = (index % 2 === 0) ? "left" : "right";
+
+          return (
+            <FieldCard 
+              key={index} 
+              label={label} 
+              align={align}
+            >
+              { value }
+            </FieldCard>
+          )
+        })
+      }
     </Container>
   )
 }
