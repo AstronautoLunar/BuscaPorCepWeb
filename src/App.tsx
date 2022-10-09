@@ -49,7 +49,7 @@ function App() {
     } finally {
       setLoading(false);
     }
-  }, [valueCep]);
+  }, [valueCep, setData]);
 
   useEffect(() => {
     if (valueCep.replace("-", "").length === 8) {
